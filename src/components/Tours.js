@@ -7,11 +7,9 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function Tours({tours}) {
+export default function Tours(tour) {
   return (
     <div className="tours-container">
-      <h1>Tours</h1>
-      {tours && tours.map(tour => (
         <Card sx={{ maxWidth: 500, }} key={tour.id}>
         <CardMedia
           component="img"
@@ -32,7 +30,6 @@ export default function Tours({tours}) {
           <Button size="small">Learn More</Button> */}
         </CardActions>
       </Card>
-      ))}
     </div>
   );
 }

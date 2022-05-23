@@ -21,7 +21,7 @@ function App() {
     return (
       <div className="App">
       <header className="App-header">
-        <h1>Tours Project</h1>
+        <h1>Tours</h1>
         <Loading />
       </header>
     </div>
@@ -31,10 +31,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Tours Project</h1>
-        <Tours
-          className="tours-container"
-          tours={tours}
-        />
+        {tours.map(tours => (
+          <Tours key={tours.id} {...tours} />
+        ))}
       </header>
     </div>
   );
