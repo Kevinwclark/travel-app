@@ -24,7 +24,7 @@ export default function Tours({name, img, info, id, removeTour}) {
             {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {readMore ? info : `${info.substring(0, 100)}...`}
+            {readMore ? info : `${info.substring(0, 180)}...`}
             <Button onClick={() => setReadMore(!readMore)}size="small">{readMore ? `Read Less` : `Read More`}</Button>
           </Typography>
         </CardContent>
