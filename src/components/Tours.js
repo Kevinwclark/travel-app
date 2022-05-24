@@ -7,27 +7,29 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
 
-export default function Tours(tour) {
+export default function Tours({name, img, info, id, removeTour}) {
+  const [readMore, setReadMore] = React.useState(false);
+
   return (
-    <div className="tours-container">
-        <Card sx={{ maxWidth: 500, }} key={tour.id}>
+    <div className="tours-container" key={id}>
+        <Card sx={{ maxWidth: 500, }} >
         <CardMedia
           component="img"
-          alt={tour.name}
+          alt={name}
           height="140"
-          image={tour.img}
+          image={img}
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            {tour.name}
+            {name}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {tour.info}
+            {readMore ? info : `${info.substring(0, 100)}...`}
+            <Button onClick={() => setReadMore(!readMore)}size="small">{readMore ? `Read Less` : `Read More`}</Button>
           </Typography>
         </CardContent>
         <CardActions>
-          {/* <Button size="small">Share</Button>
-          <Button size="small">Learn More</Button> */}
+          <Button onClick={() => removeTour(id)} size="small">Not Interested</Button>
         </CardActions>
       </Card>
     </div>
