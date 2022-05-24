@@ -16,7 +16,7 @@ export default function Tours({name, img, info, id, removeTour}) {
         <CardMedia
           component="img"
           alt={name}
-          height="140"
+          height="250"
           image={img}
         />
         <CardContent>
